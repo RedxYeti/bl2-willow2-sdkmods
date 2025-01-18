@@ -1,0 +1,11 @@
+[project]
+name = "SkillTreeLoadouts"
+version = "1"
+authors = [{ name = "Yeti" }]
+description = "Save and Load skill tree Loadouts to quickly change builds. Access this by clicking the respec button at a New U Station.\nBuilds are saved in json files in the settings folder of the sdk_mods. You can easily share them and install Loadouts there."
+
+[tool.sdkmod]
+name = "Skill Tree Loadouts"
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/SkillTreeLoadouts/SkillTreeLoadouts.sdkmod"
+version = "1"
