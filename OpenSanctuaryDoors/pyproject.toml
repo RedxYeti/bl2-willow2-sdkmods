@@ -7,5 +7,5 @@ description = "Automatically opens the doors in Sanctuary, so you don't have to.
 [tool.sdkmod]
 name = "Open Sanctuary Doors"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
-download = ""
+download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/OpenSanctuaryDoors/OpenSanctuaryDoors.sdkmod"
 version = "1"
