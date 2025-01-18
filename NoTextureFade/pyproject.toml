@@ -7,5 +7,5 @@ description = "Disables texture fading on game start, forcing textures to load a
 [tool.sdkmod]
 name = "No Texture Fade"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
-download = ""
+download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/NoTextureFade/NoTextureFade.sdkmod"
 version = "1"
