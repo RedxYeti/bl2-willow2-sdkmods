@@ -1,1 +1,3 @@
+Save and Load skill tree Loadouts to quickly change builds. Access this by clicking the respec button at a New U Station.
 
+Builds are saved in json files in the settings folder of the sdk_mods. You can easily share them and install Loadouts there.
