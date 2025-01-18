@@ -1,1 +1,2 @@
 
+Disables texture fading on game start, forcing textures to load at thier highest level.
