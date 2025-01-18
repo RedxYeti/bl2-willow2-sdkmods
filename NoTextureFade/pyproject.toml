@@ -1,0 +1,11 @@
+[project]
+name = "NoTextureFade"
+version = "1"
+authors = [{ name = "Yeti" }]
+description = "Disables texture fading on game start, forcing textures to load at thier highest level."
+
+[tool.sdkmod]
+name = "No Texture Fade"
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+download = ""
+version = "1"
