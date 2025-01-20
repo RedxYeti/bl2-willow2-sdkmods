@@ -1,0 +1,11 @@
+[project]
+name = "GrenadeJumpKey"
+version = "1"
+authors = [{ name = "Yeti" }]
+description = "Hotkey to throw a default grenade without unequipping your nade mod."
+
+[tool.sdkmod]
+name = "Grenade Jump Key"
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+download = ""
+version = "1"
