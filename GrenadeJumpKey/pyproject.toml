@@ -2,10 +2,10 @@
 name = "GrenadeJumpKey"
 version = "1"
 authors = [{ name = "Yeti" }]
-description = "Hotkey to throw a default grenade without unequipping your nade mod."
+description = "Hotkey to throw a default grenade. Temporarily unequips your grenade mod and then automatically reequips it."
 
 [tool.sdkmod]
 name = "Grenade Jump Key"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
-download = ""
+download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/GrenadeJumpKey/GrenadeJumpKey.sdkmod"
 version = "1"
