@@ -24,7 +24,6 @@ def ThrowDefaultFrag():
 @hook("WillowGame.WillowPlayerController:GrenadeThrowComplete", Type.PRE)
 def ThrowGrenade(obj: UObject, __args: WrappedStruct, __ret: Any, __func: BoundFunction) -> None:
     global UniqueID
-    print("boop")
     Backpack = obj.GetPawnInventoryManager().Backpack
     for Item in Backpack:
         if Item.DefinitionData.UniqueID == UniqueID:
