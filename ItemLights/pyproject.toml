@@ -1,0 +1,11 @@
+[project]
+name = "ItemLights"
+version = "1"
+authors = [{ name = "Yeti" }]
+description = "Adds lights to items."
+
+[tool.sdkmod]
+name = "Item Lights"
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+download = ""
+version = "1"
