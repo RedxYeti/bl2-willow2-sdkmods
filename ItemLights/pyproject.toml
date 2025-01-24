@@ -7,5 +7,5 @@ description = "Adds lights to items when they're on the ground. Options for how 
 [tool.sdkmod]
 name = "Item Lights"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
-download = ""
+download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/ItemLights/ItemLights.sdkmod"
 version = "1"
