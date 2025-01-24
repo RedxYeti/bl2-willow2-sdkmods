@@ -2,7 +2,7 @@
 name = "ItemLights"
 version = "1"
 authors = [{ name = "Yeti" }]
-description = "Adds lights to items."
+description = "Adds lights to items when they're on the ground. Options for how bright the lights are and their radius."
 
 [tool.sdkmod]
 name = "Item Lights"
