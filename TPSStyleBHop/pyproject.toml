@@ -1,0 +1,11 @@
+[project]
+name = "TPSStyleBHop"
+version = "1"
+authors = [{ name = "Yeti" }]
+description = "Lets you bunny hop like you can in Pre-Sequel."
+
+[tool.sdkmod]
+name = "TPS Style Bunny Hop"
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+download = ""
+version = "1"
