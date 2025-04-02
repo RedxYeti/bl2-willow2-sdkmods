@@ -7,5 +7,5 @@ description = "Lets you bunny hop like you can in Pre-Sequel."
 [tool.sdkmod]
 name = "TPS Style Bunny Hop"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
-download = ""
+download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/TPSStyleBHop/TPSStyleBHop.sdkmod"
 version = "1"
