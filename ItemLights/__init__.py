@@ -47,15 +47,11 @@ def EnableLight(Pickupable):
     return
 
 
-@hook("WillowGame.WillowPickup:InventoryAssociated", Type.POST)
+@hook("WillowGame.WillowPickup:SpawnPickupParticles", Type.POST)
 def InventoryAssociated(obj: UObject, __args: WrappedStruct, __ret: Any, __func: BoundFunction) -> None:
     EnableLight(obj)
     return
 
-@hook("WillowGame.WillowPickup:MissionStatusChanged", Type.POST)
-def MissionStatusChanged(obj: UObject, __args: WrappedStruct, __ret: Any, __func: BoundFunction) -> None:
-    EnableLight(obj)
-    return
 
 def DivideFalloff(Option,Value):
     global Falloff
@@ -67,12 +63,12 @@ oidWeaponsGear = BoolOption(
     False,
     "On",
     "Off",
-    description="With this enabled, only weapons and gear will have lights. Otherwise every pickupable will have lights.",
+    description="With this enabled, only weapons and gear will have lights. Otherwise every item will have a light.",
 )
 
 oidBrightness = SliderOption(
     "Light Brightness",
-    8,
+    4,
     1,
     15,
     1,
@@ -87,7 +83,7 @@ oidRadius = SliderOption(
     1024,
     10,
     False,
-    description="Choose far you want the light radius to go.\nDefault Value: 100",
+    description="Choose how far you want the light radius to go.\nDefault Value: 100",
 )
 
 oidFalloff = SliderOption(

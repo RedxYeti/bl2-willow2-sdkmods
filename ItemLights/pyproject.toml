@@ -2,10 +2,10 @@
 name = "ItemLights"
 version = "1"
 authors = [{ name = "Yeti" }]
-description = "Adds lights to items when they're on the ground. Options for how bright the lights are and their radius."
+description = "Adds lights to items."
 
 [tool.sdkmod]
 name = "Item Lights"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
-download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/ItemLights/ItemLights.sdkmod"
-version = "1"
+download = ""
+version = "1.1"
