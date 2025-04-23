@@ -7,5 +7,5 @@ description = "Choose what picks up automatically, including eridium and shieldb
 [tool.sdkmod]
 name = "Auto Pickup Tweaks"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
-download = ""
+download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/AutoPickupTweaks/AutoPickupTweaks.sdkmod"
 version = "1"
