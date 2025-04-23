@@ -1,0 +1,11 @@
+[project]
+name = "AutoPickupTweaks"
+version = "1"
+authors = [{ name = "Yeti" }]
+description = "Choose what picks up automatically, including eridium and shieldboosters. Works in co op based of the hosts settings."
+
+[tool.sdkmod]
+name = "Auto Pickup Tweaks"
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+download = ""
+version = "1"
