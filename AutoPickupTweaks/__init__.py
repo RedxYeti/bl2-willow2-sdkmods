@@ -1,3 +1,4 @@
+from typing import Any
 from unrealsdk import find_object
 from unrealsdk.hooks import Type, Block
 from unrealsdk.unreal import BoundFunction, UObject, WrappedStruct, WeakPointer
@@ -278,19 +279,18 @@ def DlcRefreshComplete(obj: UObject, __args: WrappedStruct, __ret: any, __func: 
     for key in ItemDictionary.keys():
         for item in ItemDictionary[key]:
             SetAutoPickup(item, FindValueForOptionIdentifier(key))
-    
-    DlcRefreshComplete.disable()
+
     return
 
 
-@hook("WillowGame.WillowPickup.UpdateTouchRadiusForAutomaticallyPickedUpInventory", Type.PRE)
+@hook("WillowGame.WillowPickup:UpdateTouchRadiusForAutomaticallyPickedUpInventory", Type.POST)
 def UpdateTouchRadiusForAutomaticallyPickedUpInventory(obj: UObject, __args: WrappedStruct, __ret: any, __func: BoundFunction) -> None:
     if (((obj.IsPickupableInventoryAutomaticallyPickedUp()) or (obj.bIsMissionItem and not obj.bIsMissionDirector)) and obj.Components[1]):
         obj.Components[1].SetCylinderSize(oidPickupDistance.value, oidPickupDistance.value)
     return Block
 
 
-@hook("WillowGame.WillowPickup.SetInteractParticles", Type.PRE)
+@hook("WillowGame.WillowPickup:SetInteractParticles", Type.POST)
 def InteractParticles(obj: UObject, __args: WrappedStruct, __ret: any, __func: BoundFunction) -> None:
     if not oidChests.value or not obj.Base or obj.Base.Class.Name != "WillowInteractiveObject":
         return
@@ -308,20 +308,20 @@ def InteractParticles(obj: UObject, __args: WrappedStruct, __ret: any, __func: B
     return
 
 
-@hook("WillowGame.WillowInteractiveObject.UsedBy", Type.PRE)
+@hook("WillowGame.WillowInteractiveObject:UsedBy", Type.POST)
 def UsedBy(obj: UObject, __args: WrappedStruct, __ret: any, __func: BoundFunction) -> None:
     InteractiveObjects[obj.ConsumerHandle.PID] = WeakPointer(__args.User.Controller)
     return
 
 
-@hook("WillowGame.WillowPlayerController.WillowClientDisableLoadingMovie", Type.PRE)
+@hook("WillowGame.WillowPlayerController:WillowClientDisableLoadingMovie", Type.POST)
 def DisableLoadingMovie(obj: UObject, __args: WrappedStruct, __ret: any, __func: BoundFunction) -> None:
     global InteractiveObjects
     InteractiveObjects = {}
     return
 
 
-@hook("WillowGame.WillowPlayerController.TouchedPickupable", Type.PRE)
+@hook("WillowGame.WillowPlayerController:TouchedPickupable", Type.POST)
 def TouchedPickup(obj: UObject, __args: WrappedStruct, __ret: any, __func: BoundFunction) -> None:
     if not __args.Pickup or not __args.Pickup.ObjectPointer or __args.Pickup.ObjectPointer.Base:
         return
@@ -333,4 +333,4 @@ def TouchedPickup(obj: UObject, __args: WrappedStruct, __ret: any, __func: Bound
     return
 
 
-build_mod(options = [oidMainNest])
+build_mod(options = [oidMainNest], hooks=[TouchedPickup, DisableLoadingMovie, UsedBy, InteractParticles, UpdateTouchRadiusForAutomaticallyPickedUpInventory, DlcRefreshComplete])
