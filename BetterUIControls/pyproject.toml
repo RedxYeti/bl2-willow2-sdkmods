@@ -7,5 +7,5 @@ description = "Enables your movement keys (like WASD) and your use key to contro
 [tool.sdkmod]
 name = "Better UI Controls"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
-download = ""
+download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/BetterUIControls/BetterUIControls.sdkmod"
 version = "1"
