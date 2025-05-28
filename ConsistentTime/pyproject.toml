@@ -1,0 +1,11 @@
+[project]
+name = "ConsistentTime"
+version = "1"
+authors = [{ name = "Yeti" }]
+description = "Keeps a consistent Day/Night cycle by stopping maps from setting specific times. Also includes an option to force the time to stay at a specific time."
+
+[tool.sdkmod]
+name = "Consistent Time"
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+download = ""
+version = "1"
