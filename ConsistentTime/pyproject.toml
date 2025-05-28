@@ -7,5 +7,5 @@ description = "Keeps a consistent Day/Night cycle by stopping maps from setting 
 [tool.sdkmod]
 name = "Consistent Time"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
-download = ""
+download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/ConsistentTime/ConsistentTime.sdkmod"
 version = "1"
