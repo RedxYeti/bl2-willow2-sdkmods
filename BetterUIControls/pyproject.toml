@@ -2,7 +2,7 @@
 name = "BetterUIControls"
 version = "2"
 authors = [{ name = "Yeti" }]
-description = """
+description = """\
 This mod will let you use your movement keys (in my case WASD) to control a bunch of menus. 
 
 
