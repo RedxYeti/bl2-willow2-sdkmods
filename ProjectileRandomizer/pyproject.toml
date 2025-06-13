@@ -2,10 +2,20 @@
 name = "ProjectileRandomizer"
 version = "2"
 authors = [{ name = "Yeti" }]
-description = "Randomizes Projectiles."
+description = "This mod will randomize projectiles all over your game. There's 2 types of things it randomizes. One is Firing Modes and the other is Projectiles.
+
+Firing modes are mostly used on weapons. Guns and vehicles use them.
+
+Projectiles are mostly used on grenades, however firing modes can have projectiles tied to them.
+You'll find most weapons with different projectiles than their firing modes, the projectile will come out of the weapon.
+Projectiles and Firing Modes will show on the item card.
+
+Weapons also have a 50/50 chance of projectiles being changed or even added to their firing mode.
+
+You'll see on the item card what each has been randomized to."
 
 [tool.sdkmod]
 name = "Projectile Randomizer"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
-download = ""
+download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/ProjectileRandomizer/ProjectileRandomizer.sdkmod"
 version = "1"
