@@ -3,7 +3,7 @@ name = "BetterUIControls"
 version = "2"
 authors = [{ name = "Yeti" }]
 description = """\
-This mod will let you use your movement keys (in my case WASD) to control a bunch of menus. 
+This mod will let you use your movement keys (in my case WASD) to control a bunch of menus. <br/> <br/>
 
 
 It also enables your Use key (in my case E) to select items in menus. The mod will automatically adjust to your keys.
