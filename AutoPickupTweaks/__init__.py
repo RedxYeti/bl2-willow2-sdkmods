@@ -323,11 +323,11 @@ def DisableLoadingMovie(obj: UObject, __args: WrappedStruct, __ret: any, __func:
 
 @hook("WillowGame.WillowPlayerController:TouchedPickupable", Type.POST)
 def TouchedPickup(obj: UObject, __args: WrappedStruct, __ret: any, __func: BoundFunction) -> None:
-    if not __args.Pickup or not __args.Pickup.ObjectPointer or __args.Pickup.ObjectPointer.Base:
+    TouchedPickable = __args.Pickup
+    if not TouchedPickable or TouchedPickable.Base or not TouchedPickable.bPickupable:
         return
     
-    TouchedPickable = __args.Pickup.ObjectPointer
-    if oidShieldBoosters.value and str(TouchedPickable.Inventory.ItemName) in ShieldNames and TouchedPickable.bPickupable:
+    if oidShieldBoosters.value and hasattr(TouchedPickable.Inventory, "ItemName") and str(TouchedPickable.Inventory.ItemName) in ShieldNames and TouchedPickable.bPickupable:
         if TouchedPickable.ImpactEffectPlayCount >= 1 or TouchedPickable.bPickupAtRest:
             obj.PickupPickupable(TouchedPickable, True)
     return
