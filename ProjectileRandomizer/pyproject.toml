@@ -1,0 +1,11 @@
+[project]
+name = "ProjectileRandomizer"
+version = "2"
+authors = [{ name = "Yeti" }]
+description = "Randomizes Projectiles."
+
+[tool.sdkmod]
+name = "Projectile Randomizer"
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+download = ""
+version = "1"
