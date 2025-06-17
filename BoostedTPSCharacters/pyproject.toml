@@ -1,0 +1,11 @@
+[project]
+name = "BoostedTPSCharacters"
+version = "1"
+authors = [{ name = "Yeti" }]
+description = "Adds boosted characters to the character select screen. Characters start a the beginning of TVHM. Everyone spawns with the same loot and theres also 2 chests were added to where you wake up."
+
+[tool.sdkmod]
+name = "Boosted TPS Characters"
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+download = ""
+version = "1"
