@@ -7,5 +7,5 @@ description = "Adds boosted characters to the character select screen. Character
 [tool.sdkmod]
 name = "Boosted TPS Characters"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
-download = ""
+download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/BoostedTPSCharacters/BoostedTPSCharacters.sdkmod"
 version = "1"
