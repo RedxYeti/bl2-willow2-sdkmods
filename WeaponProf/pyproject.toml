@@ -24,5 +24,5 @@ name = "Weapon Proficiencies"
 supported_games = ["BL2"]
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
 coop_support = "HostOnly"
-download = ""
+download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/WeaponProf/WeaponProf.sdkmod"
 version = "1"
