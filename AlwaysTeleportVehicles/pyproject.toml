@@ -2,7 +2,7 @@
 name = "AlwaysTeleportVehicles"
 version = "1"
 authors = [{ name = "Yeti" }]
-description = "Choose whether to always teleport into and/or out of vehicles."
+description = "Choose whether to always teleport into and-or out of vehicles."
 
 [tool.sdkmod]
 name = "Always Teleport Vehicles"
