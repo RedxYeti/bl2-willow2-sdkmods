@@ -1,0 +1,13 @@
+[project]
+name = "WeaponProf"
+version = "1"
+authors = [{ name = "Yeti" }]
+description = "Adds Weapon Proficiencies from Borderlands 1. Probably OP but still fun."
+
+[tool.sdkmod]
+name = "Weapon Proficiencies"
+supported_games = ["BL2"]
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+coop_support = "HostOnly"
+download = ""
+version = "1"
