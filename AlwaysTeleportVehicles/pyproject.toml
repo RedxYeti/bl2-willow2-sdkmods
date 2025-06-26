@@ -1,0 +1,13 @@
+[project]
+name = "AlwaysTeleportVehicles"
+version = "1"
+authors = [{ name = "Yeti" }]
+description = "Choose whether to always teleport into and/or out of vehicles."
+
+[tool.sdkmod]
+name = "Always Teleport Vehicles"
+supported_games = ["BL2"]
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+coop_support = "ClientSide"
+download = ""
+version = "1"
