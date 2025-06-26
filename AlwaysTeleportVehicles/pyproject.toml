@@ -9,5 +9,5 @@ name = "Always Teleport Vehicles"
 supported_games = ["BL2"]
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
 coop_support = "ClientSide"
-download = ""
+download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/AlwaysTeleportVehicles/AlwaysTeleportVehicles.sdkmod"
 version = "1"
