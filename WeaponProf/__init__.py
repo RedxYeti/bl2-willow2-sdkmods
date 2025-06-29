@@ -21,9 +21,9 @@ weapon_types = {
     "Launcher": 0,
 }
 
-current_weapon_type = ""
-
 saved_xp = HiddenSaveOption("saved_xp", weapon_types)
+
+current_weapon_type = ""
 
 skill_default = find_class("SkillDefinition").ClassDefaultObject
 shotgun_skill = construct_object("SkillDefinition", skill_default, "shotgun_skill")
@@ -298,7 +298,10 @@ def SetChallengeDescription(obj: UObject, args: WrappedStruct, ret: Any, func: B
             ChallengeLevels += f'<font color="#D27E02"><br>Accuracy: +{round(forth_value)}%<br>Stability: +{math.ceil(fifth_value)}%</font>'
 
         RewardHeader = "Next Level:"
-        Reward = f'{xp_table[weapon_level + 1] - int(weapon_types[current_weapon]):,} XP'
+        if weapon_level < 50 or (not oidGradeCap.value and weapon_level < 80):
+            Reward = f'{xp_table[weapon_level + 1] - int(weapon_types[current_weapon]):,} XP'
+        else:
+            Reward = "None"
         with prevent_hooking_direct_calls():
             func(ChallengeName, ChallengeDescription, ChallengeLevels, RewardHeader, Reward)
             return Block
@@ -326,6 +329,15 @@ def on_save() -> None:
 
 def on_load() -> None:
     global weapon_types
+
+    weapon_types = {
+                    "Shotgun": 0,
+                    "Assault Rifle": 0,
+                    "Pistol": 0,
+                    "Sub-Machine Gun": 0,
+                    "Sniper Rifle": 0,
+                    "Launcher": 0,
+                    }
     weapon_types = saved_xp.value
 
     for challenge in challenges:
