@@ -323,6 +323,17 @@ def AddDataEntry(obj: UObject, args: WrappedStruct, ret: Any, func: BoundFunctio
                  args.IconFrameLabel)
             return Block
 
+
+@hook("WillowGame.WillowPlayerController:SaveChallengeData", Type.PRE)
+def SaveChallengeData(obj: UObject, args: WrappedStruct, ret: Any, func: BoundFunction):
+    for item in obj.LocalChallengeDataCache:
+        if item.ChallengeDefinition not in challenges:
+            args.SaveGame.ChallengeList.append(item.ChallengeDefinition)
+  
+    args.SaveGame.NumChallengePrestiges = obj.NumChallengePrestiges
+    return Block
+
+
 def on_save() -> None:
     saved_xp.value = weapon_types
     return
