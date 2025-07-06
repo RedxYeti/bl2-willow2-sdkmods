@@ -21,7 +21,7 @@ weapon_types = {
     "Launcher": 0,
 }
 
-saved_xp = HiddenSaveOption("saved_xp", weapon_types)
+saved_xp = HiddenSaveOption("saved_xp", {})
 
 current_weapon_type = ""
 
@@ -213,6 +213,16 @@ def activate_skill_offhand(pc:UObject, weapon_type:str) -> None:
     return
 
 
+def deactivate_all() -> None:
+    for skill in get_pc().WorldInfo.Game.GetSkillManager().ActiveSkills:
+        if skill.Definition in all_prof_skills_offhand:
+            skill.Deactivate()
+
+    for skill in get_pc().WorldInfo.Game.GetSkillManager().ActiveSkills:
+        if skill.Definition in all_prof_skills:
+            skill.Deactivate()
+    return
+
 @hook("WillowGame.WillowGameInfo:AwardCombatExperience", Type.PRE)
 def KilledEnemy(obj: UObject, args: WrappedStruct, ret: Any, func: BoundFunction):
     if not args.KillerWPC:
@@ -232,8 +242,13 @@ def KilledEnemy(obj: UObject, args: WrappedStruct, ret: Any, func: BoundFunction
                     activate_skill_offhand(args.KillerWPC, offhand)
                     offhand = "SMG" if offhand == "Sub-Machine Gun" else offhand
                     show_reward_message(f"{offhand} Proficiency: Level {post_xp_level}", args.KillerWPC)
+            
 
         weapon_type = args.KillerWPC.Pawn.Weapon.DefinitionData.WeaponTypeDefinition.Typename
+
+        if weapon_type not in weapon_types:
+            return
+        
         pre_xp_level = get_level_from_xp(weapon_types[weapon_type])
         if pre_xp_level < 50 or (not oidGradeCap.value and pre_xp_level < 80):
             weapon_types[weapon_type] += xp_amount
@@ -340,15 +355,16 @@ def on_save() -> None:
 
 def on_load() -> None:
     global weapon_types
+    if saved_xp.value == {}:
+        saved_xp.value = {
+            "Shotgun": 0,
+            "Assault Rifle": 0,
+            "Pistol": 0,
+            "Sub-Machine Gun": 0,
+            "Sniper Rifle": 0,
+            "Launcher": 0,
+            }
 
-    weapon_types = {
-                    "Shotgun": 0,
-                    "Assault Rifle": 0,
-                    "Pistol": 0,
-                    "Sub-Machine Gun": 0,
-                    "Sniper Rifle": 0,
-                    "Launcher": 0,
-                    }
     weapon_types = saved_xp.value
 
     for challenge in challenges:
