@@ -6,6 +6,8 @@ from unrealsdk.unreal import UObject
 @hook("Engine.PlayerController:StopFire", Type.POST)
 @hook("Engine.PlayerController:StartFire", Type.POST)
 def test2(obj:UObject, *_) -> None:
+    if not obj or not obj.Pawn or not obj.Pawn.Weapon:
+        return
     weapon = obj.Pawn.Weapon
     offhand = obj.Pawn.OffHandWeapon
     if weapon and weapon.NeedToReload():
