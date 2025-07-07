@@ -1,9 +1,10 @@
 import math
 from typing import Any
-from mods_base import get_pc,hook, build_mod, BoolOption
+from mods_base import get_pc,hook, build_mod, BoolOption, ButtonOption
 from unrealsdk import find_class, find_object, construct_object, make_struct
 from unrealsdk.hooks import Type, Block, prevent_hooking_direct_calls
 from unrealsdk.unreal import BoundFunction, UObject, WrappedStruct
+from ui_utils import OptionBoxButton, OptionBox
 
 from save_options.options import HiddenSaveOption
 from save_options.registration import register_save_options
@@ -21,7 +22,7 @@ weapon_types = {
     "Launcher": 0,
 }
 
-saved_xp = HiddenSaveOption("saved_xp", {})
+
 
 current_weapon_type = ""
 
@@ -349,23 +350,38 @@ def SaveChallengeData(obj: UObject, args: WrappedStruct, ret: Any, func: BoundFu
     return Block
 
 
+
+saved_xp = HiddenSaveOption(
+    "saved_xp", 
+    {
+      "Shotgun": 0,
+      "Assault Rifle": 0,
+      "Pistol": 0,
+      "Sub-Machine Gun": 0,
+      "Sniper Rifle": 0,
+      "Launcher": 0,
+    }
+)
+
+
 def on_save() -> None:
     saved_xp.value = weapon_types
     return
 
+
 def on_load() -> None:
     global weapon_types
-    if saved_xp.value == {}:
-        saved_xp.value = {
+    if get_pc().GetCachedSaveGame().SaveGameId == -1:
+        weapon_types = {
             "Shotgun": 0,
             "Assault Rifle": 0,
             "Pistol": 0,
             "Sub-Machine Gun": 0,
             "Sniper Rifle": 0,
             "Launcher": 0,
-            }
-
-    weapon_types = saved_xp.value
+        }
+    else:
+        weapon_types = saved_xp.value
 
     for challenge in challenges:
         if not get_pc().PlayerHasChallenge(challenge):
@@ -379,6 +395,74 @@ def cap_change(option, new_value):
     for skill in all_prof_skills_offhand:
         skill.MaxGrade = new_cap
     return
+
+
+def reset_box(the_box, pressed_button):
+    if pressed_button == confirm_button:
+        global weapon_types
+        weapon_types = {
+            "Shotgun": 0,
+            "Assault Rifle": 0,
+            "Pistol": 0,
+            "Sub-Machine Gun": 0,
+            "Sniper Rifle": 0,
+            "Launcher": 0,
+        }
+        saved_xp.value = {
+            "Shotgun": 0,
+            "Assault Rifle": 0,
+            "Pistol": 0,
+            "Sub-Machine Gun": 0,
+            "Sniper Rifle": 0,
+            "Launcher": 0,
+        }
+        finished_button = OptionBoxButton(
+            name="OK",
+        )
+        finished_box = OptionBox(
+            title="Reset Complete",
+            message="This characters proficiencies have been reset!",
+            buttons=[finished_button]
+        )
+        finished_box.show()
+
+
+confirm_button = OptionBoxButton(
+    name="Yes",
+)
+
+cancel_button = OptionBoxButton(
+    name="Cancel"
+)
+
+box = OptionBox(
+    title="Proficiency Reset",
+    message="You are about to reset this characters proficiencies, it will not affect other characters progress.\nContinue?",
+    buttons=[confirm_button, cancel_button],
+    on_select=reset_box
+)
+
+
+def reset_profs(button):
+    if get_pc().GetPrimaryPlayerStandIn():
+        menu_button = OptionBoxButton(
+            name="OK",
+        )
+        menu_box = OptionBox(
+            title="Reset Failure",
+            message="This feature only works when in-game.",
+            buttons=[menu_button]
+        )
+        menu_box.show()
+    else:
+        box.show()
+    
+
+oidResetButton  = ButtonOption(
+    "Reset Character Proficiencies",
+    description="Reset this characters proficiencies. Does not affect other characters.",
+    on_press=reset_profs,
+)
 
 oidZerker = BoolOption(
     "Offhand Weapon Buffs",
@@ -398,4 +482,5 @@ oidGradeCap = BoolOption(
 )
 
 mod = build_mod()
+mod.options = [oidZerker, oidGradeCap, oidResetButton]
 register_save_options(mod)
