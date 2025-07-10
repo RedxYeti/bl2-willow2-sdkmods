@@ -98,7 +98,7 @@ def CustomizationGFxMovie(obj: UObject, __args: WrappedStruct, __ret: Any, __fun
 @hook("WillowGame.CustomizationGFxMovie:SetTooltips")
 def SetTooltips(obj: UObject, __args: WrappedStruct, __ret: Any, __func: BoundFunction) -> None:   
     VariableObject = obj.GetVariableObject(obj.TooltipsPath)
-    obj.CharacterCustomizationInfoCard.DisplayRespecCard()
+    #obj.CharacterCustomizationInfoCard.DisplayRespecCard()
     if VariableObject:
         if obj.bSelectingFromList:
             return
