@@ -1,0 +1,13 @@
+[project]
+name = "AltUseFastTravel"
+version = "1"
+authors = [{ name = "Yeti" }]
+description = "Enables alt use for fast travel stations. Options include traveling to your current objective, a specific station or  your last station."
+
+[tool.sdkmod]
+name = "Alt Use Fast Travel"
+supported_games = ["BL2", "TPS", "AoDK"]
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+coop_support = "HostOnly"
+download = ""
+version = "1"
