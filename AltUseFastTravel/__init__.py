@@ -243,7 +243,8 @@ def on_save() -> None:
 def changed_spinner(option, new_value) -> None:
     if get_pc().WorldInfo.bIsMenuLevel:
         return
-
+    
+    global travel_station, past_stations
     for station in find_all("FastTravelStationDefinition"):
         if station and "*" in station.StationDisplayName:
             station.StationDisplayName = station.StationDisplayName.split("*")[0]
@@ -253,6 +254,7 @@ def changed_spinner(option, new_value) -> None:
             station.InteractiveObjectDefinition.HUDIconDefSecondary = None
             station.SetUsability(False, 1)
 
+    new_ft = ''
     if new_value == "Current Objective":
         if not icon:
             create_icon()
@@ -261,17 +263,22 @@ def changed_spinner(option, new_value) -> None:
 
     elif get_specific_pt_option().value and new_value == "Specific Station":
         travel_station = get_specific_pt_option().value
+        new_ft = travel_station
         create_icon()
         current_station = get_station(travel_station)
         current_station.StationDisplayName = current_station.StationDisplayName + "*"
+        
 
     elif new_value == "Last Station":
         past_stations = get_last_pt_option().value
         if get_last_pt_option().value:
             travel_station = past_stations[0]
+            new_ft = travel_station
             create_icon()
 
-    if new_value == "Current Objective" or travel_station:
+    if new_value == "Current Objective" or new_ft:
+        if new_ft:
+            icon.Text = f"RETURN TO {str(get_station(new_ft).StationDisplayName).split('*')[0].upper()}"
         for station in find_all("FastTravelStation"):
             if station and station.InteractiveObjectDefinition:
                 station.InteractiveObjectDefinition.HUDIconDefSecondary = icon
