@@ -2,20 +2,19 @@
 from mods_base import get_pc,build_mod, Library, command, Game
 from argparse import Namespace
 from unrealsdk import find_class, find_all
-from unrealsdk.unreal import UObject
+from unrealsdk.unreal import UObject, WrappedStruct
 from random import choice
 import math
 
 actor_class = find_class("Actor")
+is_bl2_type:bool = Game.get_current() in [Game.BL1, Game.BL2, Game.AODK, Game.TPS]
 
-def get_distance(player,actor):
-        return math.sqrt(
-            (player.x - actor.x) ** 2
-            + (player.y - actor.y) ** 2
-            + (player.z - actor.z) ** 2
-        )
-
-is_bl2_type:bool = Game.get_current() in [Game.BL2, Game.AoDK, Game.TPS]
+def get_distance(origin_loc:WrappedStruct,actor_loc:WrappedStruct):
+    return math.sqrt(
+        (origin_loc.x - actor_loc.x) ** 2
+        + (origin_loc.y - actor_loc.y) ** 2
+        + (origin_loc.z - actor_loc.z) ** 2
+    )
 
 
 def find_all_actors(max_distance:int, origin_object: UObject | None = None) -> list:
