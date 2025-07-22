@@ -31,7 +31,6 @@ def find_all_actors(max_distance:int, origin_object: UObject | None = None) -> l
         origin_object = get_pc().Pawn
 
 
-
     actors:list = []
     for actor in find_all("Actor", False):
         if is_bl2_type:
@@ -65,11 +64,6 @@ def find_actors_of_type(actor_class:str, max_distance:int, origin_object: UObjec
     if not is_actor_class(actor_class):
         raise AttributeError(f"{actor_class} is not an actor class")
 
-    if origin_object:
-        if not hasattr(origin_object, "Location"):
-            raise AttributeError(f"{origin_object} has no attribute 'location'.")
-    else:
-        origin_object = get_pc().Pawn
 
     actors:list = []
     for actor in find_all(actor_class):

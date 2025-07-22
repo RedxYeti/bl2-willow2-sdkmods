@@ -2,12 +2,12 @@
 name = "find_actors"
 version = "1"
 authors = [{ name = "Yeti" }]
-description = "Find Actors in a certain area."
+description = "Find Actors in a certain area. Use the command find_actors class distance. class accepts any for any class."
 
 [tool.sdkmod]
 name = "Find Actors"
 supported_games = ["BL1", "BL2", "AoDK", "TPS", "BL3", "WL"]
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
 coop_support = "HostOnly"
-download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/find_actors/find_actors.sdkmod"
+download = ""
 version = "1"
