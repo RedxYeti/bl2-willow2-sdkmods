@@ -9,5 +9,5 @@ name = "Find Actors"
 supported_games = ["BL1", "BL2", "AoDK", "TPS", "BL3", "WL"]
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
 coop_support = "HostOnly"
-download = ""
+download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/find_actors/find_actors.sdkmod"
 version = "1"
