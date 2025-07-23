@@ -7,7 +7,7 @@ from random import choice
 import math
 
 actor_class = find_class("Actor")
-is_bl2_type:bool = Game.get_current() in [Game.BL1, Game.BL2, Game.AODK, Game.TPS]
+is_bl2_type:bool = Game.get_current() in [Game.BL1, Game.BL2, Game.AoDK, Game.TPS]
 
 def get_distance(origin_loc:WrappedStruct,actor_loc:WrappedStruct):
     return math.sqrt(
