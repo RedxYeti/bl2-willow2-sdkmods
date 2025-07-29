@@ -1,6 +1,6 @@
 [project]
 name = "AutomaticReloadFix"
-version = "1"
+version = "1.1"
 authors = [{ name = "Yeti" }]
 description = "Fixes weapons not automatically reloading when their magazines are empty from skills, vladof weapons, etc."
 
@@ -10,4 +10,4 @@ supported_games = ["BL2", "TPS", "AODK",]
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
 coop_support = "ClientSide"
 download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/AutomaticReloadFix/AutomaticReloadFix.sdkmod"
-version = "1"
+version = "1.1"
