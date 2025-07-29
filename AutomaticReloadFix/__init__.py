@@ -3,7 +3,7 @@ from mods_base import build_mod, hook
 from unrealsdk.hooks import Type
 from unrealsdk.unreal import UObject
 
-@hook("Engine.PlayerController:StopFire", Type.POST)
+
 @hook("Engine.PlayerController:StartFire", Type.POST)
 def test2(obj:UObject, *_) -> None:
     if not obj or not obj.Pawn or not obj.Pawn.Weapon:
