@@ -1,0 +1,13 @@
+[project]
+name = "RandomSkillSelector"
+version = "1.0"
+authors = [{ name = "Yeti" }]
+description = "Randomly picks skills for you. Skills can be anywhere in the tree. Must be a new character."
+
+[tool.sdkmod]
+name = "Random Skill Selector"
+supported_games = ["BL2","TPS","AODK"]
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+coop_support = "ClientSide"
+download = ""
+version = "1.0"
