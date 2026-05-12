@@ -1,0 +1,13 @@
+[project]
+name = "PayToLoot"
+version = "1"
+authors = [{ name = "Yeti" }]
+description = "Picking up ground loot is no longer free. They now cost as much as they would in a vendor."
+dependencies=['UserFeedback >= 1.6']
+
+[tool.sdkmod]
+name = "Pay To Loot"
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+download = ""
+version = "1"
+coop_support="Unknown"
