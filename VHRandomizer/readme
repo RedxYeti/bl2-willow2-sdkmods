@@ -27,6 +27,10 @@ Options:
     
 
 TPS and AoDK are supported but largely untested.
+Suggested mods to use:
+Anarchy Saver https://bl-sdk.github.io/willow2-mod-db/mods/anarchysaver/
+Backpack Manager https://bl-sdk.github.io/willow2-mod-db/mods/backpackmanager/
+
 
 Extra Notes:
 Back up your saves if you care about them!
@@ -37,6 +41,7 @@ Dont use premade saves from places like nexus, this mod relies on item serials a
 Loot Lemon codes may have the same issue.
 
 Certain actions are blocked mid randomization, you might not encounter this
+Inputs get eaten during swaps, no way around this.
 
 Expect softlocks or even hardlocks
 Expect a few crashes
