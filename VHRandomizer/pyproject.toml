@@ -5,7 +5,7 @@ authors = [{ name = "Yeti" }]
 description = "Use a timer or hotkey to pick a random vault hunter. Keeps gear, skills, levels etc."
 
 [tool.sdkmod]
-name = "Vault Hunter Randomzier"
+name = "Vault Hunter Randomizer"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
 download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/VHRandomizer/VHRandomizer.sdkmod"
 version = "0.8"
