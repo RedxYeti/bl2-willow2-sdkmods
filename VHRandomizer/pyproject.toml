@@ -1,0 +1,11 @@
+[project]
+name = "VHRandomizer"
+version = "0.8"
+authors = [{ name = "Yeti" }]
+description = "Use a timer or hotkey to pick a random vault hunter. Keeps gear, skills, levels etc."
+
+[tool.sdkmod]
+name = "Vault Hunter Randomzier"
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+download = ""
+version = "0.8"
