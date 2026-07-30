@@ -543,7 +543,6 @@ def pick_next_char(pc:UObject) -> int:
     next_char_index = 0
     if oidSwapType.value == "Full Random":
         next_char_index = randint(0,5)
-        next_char_index = 0
         while next_char_index == current_char_index:
             next_char_index = randint(0,5)
     elif oidSwapType.value == "Half Random":
