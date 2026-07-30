@@ -1,3 +1,10 @@
+try:
+    assert __import__("coroutines").__version_info__ >= (1, 1), "Please install coroutines"
+except (AssertionError, ImportError) as ex:
+    import webbrowser
+    webbrowser.open("https://bl-sdk.github.io/willow2-mod-db/mods/coroutines/")
+    raise ex
+
 from typing import Any 
 from mods_base import get_pc, hook, build_mod, keybind, SETTINGS_DIR, BoolOption, ButtonOption, SliderOption, SpinnerOption, NestedOption, Game
 from unrealsdk import find_object, find_all, load_package, make_struct, construct_object
@@ -6,9 +13,11 @@ from unrealsdk.unreal import BoundFunction, UObject, WrappedStruct, IGNORE_STRUC
 from ui_utils import show_hud_message, show_chat_message
 from coroutines import start_coroutine_tick, WaitForSeconds
 
+
 import json
 import os
 from random import randint, choice
+
 
 if Game.get_current() in [Game.BL2, Game.AoDK]:
     char_classes = [
@@ -616,28 +625,28 @@ def new_swap():
 
 oidSharedWeapons = BoolOption(
     "Share Weapons",
-    True,
+    False,
     "ON",
     "OFF",
 )
 
 oidSharedShield = BoolOption(
     "Share Shield",
-    True,
+    False,
     "ON",
     "OFF",
 )
 
 oidSharedArtifact = BoolOption(
     "Share Artifact",
-    True,
+    False,
     "ON",
     "OFF",
 )
 
 oidSharedGrenade = BoolOption(
     "Share Grenade",
-    True,
+    False,
     "ON",
     "OFF",
 )
@@ -652,7 +661,7 @@ oidSillyRagdolls = BoolOption(
 
 oidInterruptAS = BoolOption(
     "Interrupt Action Skills",
-    False,
+    True,
     "ON",
     "OFF",
     description="With this on, it will swap even while your action skill is active."
@@ -665,8 +674,8 @@ oidMainNest = NestedOption(
     oidSharedArtifact,
     oidSharedGrenade,
     oidSharedWeapons,
-    oidSillyRagdolls,
     oidInterruptAS,
+    oidSillyRagdolls,
     ]
 )
 
