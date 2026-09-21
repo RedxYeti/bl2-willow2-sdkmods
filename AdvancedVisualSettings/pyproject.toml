@@ -7,5 +7,5 @@ description = "Adds many options for visual settings, mostly ones locked behind 
 [tool.sdkmod]
 name = "Advanced Visual Settings"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
-download = ""
+download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/AdvancedVisualSettings/AdvancedVisualSettings.sdkmod"
 version = "1"
