@@ -1,0 +1,11 @@
+[project]
+name = "AdvancedVisualSettings"
+version = "1"
+authors = [{ name = "Yeti" }]
+description = "Adds many options for visual settings, mostly ones locked behind having depth of field on. Remember to turn depth of field on in the main game settings, then you can turn it off in the mods settings."
+
+[tool.sdkmod]
+name = "Advanced Visual Settings"
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+download = ""
+version = "1"
