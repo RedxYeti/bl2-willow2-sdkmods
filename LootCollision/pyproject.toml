@@ -2,10 +2,10 @@
 name = "LootCollision"
 version = "2"
 authors = [{ name = "Yeti" }]
-description = "LootCollision"
+description = "Disables loot collision with dead bodies and other loot. No more loot going to outer space (or further)."
 
 [tool.sdkmod]
 name = "Loot Collision"
 license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
-download = ""
+download = "https://github.com/RedxYeti/bl2-willow2-sdkmods/raw/refs/heads/main/LootCollision/LootCollision.sdkmod"
 version = "1"
