@@ -1,0 +1,11 @@
+[project]
+name = "LootCollision"
+version = "2"
+authors = [{ name = "Yeti" }]
+description = "LootCollision"
+
+[tool.sdkmod]
+name = "Loot Collision"
+license = {name = "GPL3", url = "https://choosealicense.com/licenses/gpl-3.0/" }
+download = ""
+version = "1"
