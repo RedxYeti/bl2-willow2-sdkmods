@@ -34,6 +34,8 @@ else:
 
     @hook("WillowGame.Behavior_SpawnItems:ApplyBehaviorToContext", Type.PRE)
     def LC_Behavior_SpawnItems(obj: UObject, args: WrappedStruct, ret: Any, func: BoundFunction) -> None:
+        if not oidAddOffset.value:
+            return
 
         item_offset = obj.ItemScatterOffset
         item_velocity = obj.ItemDropVelocity
